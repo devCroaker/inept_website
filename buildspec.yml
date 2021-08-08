@@ -1,14 +1,20 @@
 version: 0.2
 
+# Env Variables
+# $websiteBucket = bucket name the web assets are deployed to
+# $region = AWS Region resources are deployed in
+# $userPoolId = Cognito User Pool Id
+# $userPoolClientId = Cognito User Pool Client Id
+# $identityPoolId = Cfn Identity Pool Id
+
 phases:
   install:
     commands:
       - npm ci
   build:
     commands:
-      - echo "S3 bucket is $websiteBucket"
       - aws s3 rm --recursive "s3://$websiteBucket/"
-      - npm run build
+      - REGION=$region USER_POOL_ID=$userPoolId APP_CLIENT_ID=$userPoolClientId IDENTITY_POOL_ID=$identityPoolId npm run build
 artifacts:
   base-directory: build
   files:
