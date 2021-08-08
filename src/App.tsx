@@ -10,6 +10,8 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
 
+import { config } from './config'
+
 const App = () => {
   const [state, setState] = useState({
     drawer: false
@@ -68,7 +70,7 @@ const App = () => {
 
       <Switch>
         <Route path="/login">
-          <h3 style={{marginLeft: '50px'}}>Also Under Construction</h3>
+          <h3 style={{marginLeft: '50px'}}>{JSON.stringify(config)}</h3>
         </Route>
         <Route path="/">
           <h2 style={{marginLeft: '50px'}}>Under Construction</h2>
