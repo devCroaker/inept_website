@@ -23,7 +23,7 @@ const App = () => {
     <div style={{width: 250}}>
       <List>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem button key="Home">
+          <ListItem onClick={() => toggleDrawer(false)} button key="Home">
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
@@ -32,7 +32,7 @@ const App = () => {
       <Divider />
       <List>
         <Link to="/login" style={{ textDecoration: 'none' }}>
-          <ListItem button key="Login">
+          <ListItem onClick={() => toggleDrawer(false)} button key="Login">
             <ListItemIcon><AccountCircleIcon /></ListItemIcon>
             <ListItemText primary="Login" />
           </ListItem>

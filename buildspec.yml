@@ -6,6 +6,7 @@ phases:
       - npm ci
   build:
     commands:
+      - aws s3 rm --recursive "s3://${websiteBucket}/"
       - npm run build
 artifacts:
   base-directory: build
