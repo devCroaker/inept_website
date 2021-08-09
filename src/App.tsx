@@ -43,6 +43,7 @@ const App = () => {
     </div>
   )
 
+  console.log(process.env)
   return (
     <Router>
       <div style={{flexGrow: 1}}>
@@ -70,7 +71,7 @@ const App = () => {
 
       <Switch>
         <Route path="/login">
-          <h3 style={{marginLeft: '50px'}}>{JSON.stringify(config)}</h3>
+          <h3 style={{marginLeft: '50px'}}>Working on it</h3>
         </Route>
         <Route path="/">
           <h2 style={{marginLeft: '50px'}}>Under Construction</h2>
