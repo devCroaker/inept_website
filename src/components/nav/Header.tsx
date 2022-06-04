@@ -16,20 +16,15 @@ const Header = () => {
     <>
       <div style={{flexGrow: 1}}>
         <AppBar position="static">
-        <Toolbar>
-          <IconButton
-          onClick={() => toggleMenu(true)}
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          >
-          <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" style={{flexGrow: 1}}>Inept Engineers</Typography>
-          <Link to="/login" style={{ textDecoration: 'none', color: 'white', float: 'right', marginRight: '25px' }}>
-          <Button color="inherit">Login</Button>
-          </Link>
-        </Toolbar>
+          <Toolbar>
+            <IconButton onClick={() => toggleMenu(true)} edge="start" color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" style={{flexGrow: 1}}>Inept Engineers</Typography>
+            <Link to="/login" style={{ textDecoration: 'none', color: 'white', float: 'right', marginRight: '25px' }}>
+              <Button color="inherit">Login</Button>
+            </Link>
+          </Toolbar>
         </AppBar>
       </div>
 
