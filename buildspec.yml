@@ -7,8 +7,6 @@ version: 0.2
 # $userPoolClientId = Cognito User Pool Client Id
 # $identityPoolId = Cfn Identity Pool Id
 
-# REACT_APP_REGION=us-west-2 REACT_APP_USER_POOL_ID=us-west-2_XutGrujtd REACT_APP_APP_CLIENT_ID=4abuprr3rq6f0njbs23522iog6 REACT_APP_IDENTITY_POOL_ID=us-west-2:50da761c-6c6c-4e2d-b7b1-2ea97f6e1f8a npm start
-
 phases:
   install:
     commands:
@@ -16,9 +14,9 @@ phases:
   build:
     commands:
       - aws s3 rm --recursive "s3://$websiteBucket/"
-      - REACT_APP_REGION=$region REACT_APP_USER_POOL_ID=$userPoolId REACT_APP_APP_CLIENT_ID=$userPoolClientId REACT_APP_IDENTITY_POOL_ID=$identityPoolId npm run build
+      - REACT_APP_REGION=$region REACT_APP_USER_POOL_ID=$userPoolId REACT_APP_APP_CLIENT_ID=$userPoolClientId REACT_APP_IDENTITY_POOL_ID=$identityPoolId npm run release
 artifacts:
-  base-directory: build
+  base-directory: dist
   files:
     - "**/*"
 cache:

@@ -1,12 +1,10 @@
-import Header from '../nav/Header'
-import Switch from './Switch'
+import AppRoutes from './AppRoutes'
 import { BrowserRouter } from "react-router-dom"
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Switch />
+      <AppRoutes />
     </BrowserRouter>
   )
 }

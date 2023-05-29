@@ -1,36 +1,71 @@
-import { useState } from 'react'
-import { Link } from "react-router-dom"
-import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
-
-import Menu from './Menu'
+import { AppBar, Button, Container, Link as MuiLink, Stack, Typography, type SxProps } from '@mui/material'
+import type { Variant } from '@mui/material/styles/createTypography'
+import { Outlet, Link as RouterLink } from 'react-router-dom'
 
 const Header = () => {
-  const [open, setState] = useState(false)
-
-  const toggleMenu = (open: boolean) => {
-    setState(open)
-  }
-
   return (
     <>
-      <div style={{flexGrow: 1}}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton onClick={() => toggleMenu(true)} edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" style={{flexGrow: 1}}>Inept Engineers</Typography>
-            <Link to="/login" style={{ textDecoration: 'none', color: 'white', float: 'right', marginRight: '25px' }}>
-              <Button color="inherit">Login</Button>
-            </Link>
-          </Toolbar>
-        </AppBar>
-      </div>
-
-      <Menu open={open} toggleMenu={toggleMenu} />
+      <AppBar sx={{ height: '55px' }} position="sticky">
+        <Container disableGutters maxWidth={false}>
+          <Stack direction="row" justifyContent="space-between">
+          <NavLink
+              to="/"
+              label="Inept Engineers"
+              sx={{
+                ml: '16px',
+              }}
+              variant="h4"
+            />
+            <NavLink
+              to="/login"
+              label="Login"
+              sx={{
+                mr: '16px',
+                alignSelf: 'center',
+              }}
+            />
+          </Stack>
+        </Container>
+      </AppBar>
+      <Outlet />
     </>
   )
 }
 
 export default Header
+
+type NavLinkProps = {
+  to: string
+  label: string
+  sx?: SxProps
+  variant?: Variant
+}
+
+const NavLink = ({
+  to,
+  label,
+  sx,
+  variant = 'h5'
+}: NavLinkProps) => {
+  return (
+    <MuiLink
+      component={RouterLink}
+      to={to}
+      sx={{
+        color: 'white',
+        ...sx,
+      }}
+    >
+      <Button sx={{color: 'inherit'}}>
+        <Typography
+          variant={variant}
+          sx={{
+            textTransform: 'none',
+          }}
+        >
+          {label}
+        </Typography>
+      </Button>
+    </MuiLink>
+  )
+}
