@@ -1,6 +1,6 @@
-import { AppBar, Button, Container, Link as MuiLink, Stack, Typography, type SxProps } from '@mui/material'
-import type { Variant } from '@mui/material/styles/createTypography'
-import { Outlet, Link as RouterLink } from 'react-router-dom'
+import { AppBar, Button, Container, Link as MuiLink, Stack, Typography, type SxProps } from '@mui/material';
+import type { Variant } from '@mui/material/styles/createTypography';
+import { Outlet, Link as RouterLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <AppBar sx={{ height: '55px' }} position="sticky">
         <Container disableGutters maxWidth={false}>
           <Stack direction="row" justifyContent="space-between">
-          <NavLink
+            <NavLink
               to="/"
               label="Inept Engineers"
               sx={{
@@ -29,24 +29,19 @@ const Header = () => {
       </AppBar>
       <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 type NavLinkProps = {
-  to: string
-  label: string
-  sx?: SxProps
-  variant?: Variant
-}
+  to: string;
+  label: string;
+  sx?: SxProps;
+  variant?: Variant;
+};
 
-const NavLink = ({
-  to,
-  label,
-  sx,
-  variant = 'h5'
-}: NavLinkProps) => {
+const NavLink = ({ to, label, sx, variant = 'h5' }: NavLinkProps) => {
   return (
     <MuiLink
       component={RouterLink}
@@ -54,18 +49,16 @@ const NavLink = ({
       sx={{
         color: 'white',
         ...sx,
-      }}
-    >
-      <Button sx={{color: 'inherit'}}>
+      }}>
+      <Button sx={{ color: 'inherit' }}>
         <Typography
           variant={variant}
           sx={{
             textTransform: 'none',
-          }}
-        >
+          }}>
           {label}
         </Typography>
       </Button>
     </MuiLink>
-  )
-}
+  );
+};

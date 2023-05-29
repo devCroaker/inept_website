@@ -5,7 +5,7 @@
   "useGitignore": true,
   "validateDirectives": true,
   "cache": {
-      "useCache": true,
-      "cacheLocation": "./node_modules/.cache/cspell/.cspell"
+    "useCache": true,
+    "cacheLocation": "./node_modules/.cache/cspell/.cspell"
   }
 }
