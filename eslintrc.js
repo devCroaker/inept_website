@@ -29,7 +29,7 @@ const baseRestrictedImports = {
       message: 'Import from the source file instead.',
     },
   ],
-};
+}
 
 module.exports = {
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'jest', 'testing-library', 'import'],
@@ -663,4 +663,4 @@ module.exports = {
       },
     ],
   },
-};
+}

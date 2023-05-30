@@ -1,11 +1,11 @@
 /* eslint-env node */
 
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const HTMLMinimizerPlugin = require('html-minimizer-webpack-plugin');
-const { LicenseWebpackPlugin } = require('license-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const packageJson = require('./package.json');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const HTMLMinimizerPlugin = require('html-minimizer-webpack-plugin')
+const { LicenseWebpackPlugin } = require('license-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const packageJson = require('./package.json')
 
 const ACCEPTABLE_LICENSES = [
   'MIT',
@@ -16,7 +16,7 @@ const ACCEPTABLE_LICENSES = [
   'Apache-2.0',
   'ISC',
   'Unlicense',
-];
+]
 
 module.exports = function () {
   return {
@@ -28,12 +28,12 @@ module.exports = function () {
       new LicenseWebpackPlugin({
         outputFilename: 'third-party-licenses.txt',
         unacceptableLicenseTest: (licenseIdentifier) => {
-          return !ACCEPTABLE_LICENSES.includes(licenseIdentifier);
+          return !ACCEPTABLE_LICENSES.includes(licenseIdentifier)
         },
         perChunkOutput: false,
         skipChildCompilers: true,
         excludedPackageTest: (packageName) => {
-          return packageName === packageJson.name;
+          return packageName === packageJson.name
         },
       }),
     ],
@@ -65,5 +65,5 @@ module.exports = function () {
       },
     },
     devtool: false,
-  };
-};
+  }
+}

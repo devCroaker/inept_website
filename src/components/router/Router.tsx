@@ -1,12 +1,34 @@
-import AppRoutes from './AppRoutes';
-import { BrowserRouter } from 'react-router-dom';
+import { Typography } from '@mui/material'
+import Header from '../nav/Header'
+import { useRoutes } from 'react-router-dom'
 
 const Router = () => {
-  return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  );
-};
+  const mainRoutes = {
+    path: '/',
+    element: <Header />,
+    children: [
+      {
+        path: '/',
+        element: (
+          <Typography variant="h5" sx={{ ml: '50px' }}>
+            Under Construction
+          </Typography>
+        ),
+      },
+      {
+        path: '/login',
+        element: (
+          <Typography variant="h5" sx={{ ml: '50px' }}>
+            Working on it
+          </Typography>
+        ),
+      },
+    ],
+  }
 
-export default Router;
+  const routing = useRoutes([mainRoutes])
+
+  return <>{routing}</>
+}
+
+export default Router

@@ -1,8 +1,8 @@
 /* eslint-env node */
 
 module.exports = (api) => {
-  const isTest = api.env('test');
-  const isDev = api.env('development');
+  const isTest = api.env('test')
+  const isDev = api.env('development')
   return {
     plugins: [...(isDev ? ['react-refresh/babel'] : [])],
     presets: [
@@ -44,5 +44,5 @@ module.exports = (api) => {
       noClassCalls: true,
       noDocumentAll: true,
     },
-  };
-};
+  }
+}

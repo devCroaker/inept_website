@@ -1,7 +1,7 @@
 /* eslint-env node */
 
-const inspector = require('inspector');
-const isDebuggerAttached = inspector.url() !== undefined;
+const inspector = require('inspector')
+const isDebuggerAttached = inspector.url() !== undefined
 
 module.exports = {
   restoreMocks: true,
@@ -36,4 +36,4 @@ module.exports = {
   testEnvironment: 'jsdom',
   testTimeout: isDebuggerAttached ? 10000000 : 5000,
   randomize: true,
-};
+}

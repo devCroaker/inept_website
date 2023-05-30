@@ -1,7 +1,7 @@
 // cspell:words pmmmwh
 /* eslint-env node */
 
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = function () {
   return {
@@ -50,5 +50,5 @@ module.exports = function () {
       ignored: /node_modules/,
     },
     devtool: 'source-map',
-  };
-};
+  }
+}

@@ -1,13 +1,13 @@
 /* eslint-env node */
 
-const webpack = require('webpack');
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const svgToMiniDataURI = require('mini-svg-data-uri');
+const webpack = require('webpack')
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const svgToMiniDataURI = require('mini-svg-data-uri')
 
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: './.env' })
 
 module.exports = function () {
   return {
@@ -76,5 +76,5 @@ module.exports = function () {
       ],
     },
     stats: 'errors-warnings',
-  };
-};
+  }
+}

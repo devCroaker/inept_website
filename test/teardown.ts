@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'path'
 
 export default function teardown(): void {
   console.log(`
@@ -8,5 +8,5 @@ View Coverage Report (Open in Browser): ${path.relative(
     path.join(__dirname, '../coverage/lcov-report/index.html')
   )}
 ================================================================================
-`);
+`)
 }
